@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nak3d Eye Films — Cinematic Excellence</title>
+  <meta name="description" content="Nak3d Eye Films — the cinematic production division of Nak3d Eye Entertainment. Music videos, TV series, and original film productions." />
+  <link rel="icon" href="../../images/ne-logo.png" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    .film-hero {
+      padding: 10rem 4rem 6rem; text-align: center;
+      background: linear-gradient(0deg, var(--black) 0%, rgba(5,5,5,0.7) 100%), url('../../images/hero-bg.png') center/cover no-repeat;
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+    }
+    .production-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .production-card {
+      position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16/9;
+      border: 1px solid var(--white-faint); transition: var(--transition);
+      text-decoration: none; color: inherit;
+    }
+    .production-card:hover { border-color: var(--gold); transform: scale(1.02); }
+    .production-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .production-card:hover img { filter: brightness(0.6); }
+    .production-overlay {
+      position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,5,5,0.9) 0%, transparent 60%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem;
+    }
+    .breadcrumb { padding:0.9rem 4rem; border-bottom:1px solid var(--white-faint); font-size:0.75rem; color:var(--white-muted); display:flex; gap:0.5rem; align-items:center; }
+    .breadcrumb a { color:var(--gold); }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-logo">
+    <img src="../../images/ne-logo.png" alt="Nak3d Eye" />
+    <span>Nak3d Eye</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../../index.html">Enterprises</a></li>
+    <li><a href="../index.html">Entertainment</a></li>
+    <li><a href="index.html" class="active">Film</a></li>
+    <li><a href="../music/">Music</a></li>
+  </ul>
+  <a href="../music/" class="nav-cta">Explore Music</a>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<div class="film-hero">
+  <span class="section-eyebrow reveal">Cinematic Division</span>
+  <h1 class="section-title reveal reveal-delay-1" style="font-size:clamp(2.5rem,7vw,6rem);">Nak3d Eye <span class="gold">Films</span></h1>
+  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">Visual storytelling. Authentic grit. High-fidelity production for music, TV, and the big screen.</p>
+</div>
+
+<div class="breadcrumb">
+  <a href="../../index.html">nak3deye.com</a><span>/</span>
+  <a href="../index.html">entertainment</a><span>/</span>
+  <span style="color:var(--white);">film</span>
+</div>
+
+<!-- FEATURED: TV -->
+<section>
+  <span class="section-eyebrow reveal">Television</span>
+  <h2 class="section-title reveal reveal-delay-1">Original Series</h2>
+  <div class="production-grid">
+    <a href="tv/gardenstaterehab/" class="production-card reveal reveal-delay-2" style="grid-column: 1 / -1; aspect-ratio: 21/9;">
+      <img src="../../images/hero-bg.png" alt="Garden State Rehab" />
+      <div class="production-overlay">
+        <div style="background:var(--gold); color:var(--black); padding:0.25rem 0.75rem; border-radius:4px; font-size:0.7rem; font-weight:800; display:inline-block; width:fit-content; margin-bottom:0.5rem; text-transform:uppercase;">Flagship Series</div>
+        <h3 style="font-size:2.5rem; font-family:'Outfit', sans-serif;">Garden State Rehab</h3>
+        <p style="color:var(--white-muted);">8-Season Narrative Arc. Pre-Production.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- MUSIC VIDEOS -->
+<section style="background:var(--black-2);">
+  <span class="section-eyebrow reveal">Visuals</span>
+  <h2 class="section-title reveal reveal-delay-1">Music Videos</h2>
+  <div class="production-grid">
+    <div class="production-card reveal reveal-delay-1">
+      <div style="aspect-ratio:16/9; background:var(--black-3); position:relative;">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute; inset:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+      </div>
+      <div style="padding:1rem;">
+        <h4>Deli</h4>
+        <p style="font-size:0.8rem; color:var(--white-muted);">Franklin Rizzolini ft. Jersey Demic</p>
+      </div>
+    </div>
+    <div class="production-card reveal reveal-delay-2">
+      <div style="aspect-ratio:16/9; background:var(--black-3); position:relative;">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute; inset:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+      </div>
+      <div style="padding:1rem;">
+        <h4>Lonely At The Top</h4>
+        <p style="font-size:0.8rem; color:var(--white-muted);">Franklin Rizzolini · Animated</p>
+      </div>
+    </div>
+    <div class="production-card reveal reveal-delay-3">
+      <div style="aspect-ratio:16/9; background:var(--black-3); position:relative;">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute; inset:0; width:100%; height:100%; border:none;" allowfullscreen></iframe>
+      </div>
+      <div style="padding:1rem;">
+        <h4>Backpack</h4>
+        <p style="font-size:0.8rem; color:var(--white-muted);">Franklin Rizzolini · Official Video</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-section">
+  <span class="section-eyebrow reveal">Stay Informed</span>
+  <h2 class="section-title reveal reveal-delay-1">Production Alerts</h2>
+  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">Get updates on casting calls, release dates, and exclusive behind-the-scenes content.</p>
+  <form class="email-form reveal reveal-delay-3" onsubmit="return false;">
+    <input type="email" placeholder="Your email address" required />
+    <button type="submit" class="btn-primary">Join The Waitlist</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../../images/ne-logo.png" alt="Nak3d Eye" />
+      <p>Nak3d Eye Films — cinematic production. A subsidiary of Nak3d Eye Entertainment.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Production</h4>
+      <ul>
+        <li><a href="tv/gardenstaterehab/">Garden State Rehab</a></li>
+        <li><a href="#videos">Music Videos</a></li>
+        <li><a href="#">Commercial</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Entertainment</h4>
+      <ul>
+        <li><a href="../index.html">Main Hub</a></li>
+        <li><a href="../music/">Music Label</a></li>
+        <li><a href="../music/artists/franklin-rizzolini/">Franklin Rizzolini</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empire</h4>
+      <ul>
+        <li><a href="../../index.html">Nak3d Eye Enterprises</a></li>
+        <li><a href="mailto:info@nak3deye.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Nak3d Eye Enterprises. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="../../js/main.js"></script>
+</body>
+</html>
