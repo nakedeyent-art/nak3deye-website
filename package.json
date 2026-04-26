@@ -1,0 +1,9 @@
+{
+  "name": "nak3deye-website",
+  "version": "1.0.0",
+  "description": "Nak3d Eye Entertainment official website",
+  "scripts": {
+    "dev": "npx serve . -p 3001 --no-clipboard",
+    "preview": "npx serve . -p 3001"
+  }
+}

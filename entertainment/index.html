@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nak3d Eye Entertainment — Music · Film · TV · Digital</title>
+  <meta name="description" content="Nak3d Eye Entertainment is the flagship creative division of Nak3d Eye Enterprises — spanning music, film, TV, and digital media." />
+  <link rel="icon" href="../images/ne-logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .ent-hero {
+      padding: 10rem 4rem 6rem; text-align: center;
+      background: var(--black-2);
+      border-bottom: 1px solid rgba(212,175,55,0.1);
+    }
+    .divisions-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .division-card {
+      position: relative; overflow: hidden;
+      border-radius: 16px; aspect-ratio: 4/3;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 2.5rem; text-decoration: none; color: inherit;
+      border: 1px solid var(--white-faint); transition: var(--transition);
+      background: var(--black-3);
+    }
+    .division-card:hover { transform: translateY(-6px); border-color: rgba(212,175,55,0.4); }
+    .division-card-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 60%, rgba(5,5,5,0.1) 100%);
+    }
+    .division-card-icon { font-size: 3rem; margin-bottom: 0.75rem; position: relative; z-index: 1; }
+    .division-card-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; position: relative; z-index: 1; }
+    .division-card h3 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .division-card p { font-size: 0.85rem; color: var(--white-muted); margin-bottom: 1rem; position: relative; z-index: 1; }
+    .division-link { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); position: relative; z-index: 1; transition: var(--transition); }
+    .division-card:hover .division-link { letter-spacing: 0.15em; }
+    @media(max-width:768px) { .divisions-grid { grid-template-columns: 1fr; } .ent-hero { padding: 8rem 1.5rem 4rem; } }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-logo">
+    <img src="../images/ne-logo.png" alt="Nak3d Eye" />
+    <span>Nak3d Eye</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">Enterprises</a></li>
+    <li><a href="index.html" class="active">Entertainment</a></li>
+    <li><a href="music/">Music</a></li>
+    <li><a href="film/">Film</a></li>
+  </ul>
+  <a href="music/" class="nav-cta">Stream Music</a>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<div class="ent-hero">
+  <span class="section-eyebrow reveal">A Nak3d Eye Enterprises Company</span>
+  <h1 class="section-title reveal reveal-delay-1" style="font-size:clamp(2.5rem,7vw,5.5rem);">Nak3d Eye<br/><span class="gold">Entertainment</span></h1>
+  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">The flagship creative division — home to music, film, TV, and talent development under one roof.</p>
+  <div class="hero-actions" style="justify-content:center;margin-top:2rem;" class="reveal reveal-delay-3">
+    <a href="music/" class="btn-primary">Music Label</a>
+    <a href="film/" class="btn-outline">Film Division</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div style="padding:1rem 4rem;border-bottom:1px solid var(--white-faint);font-size:0.75rem;color:var(--white-muted);">
+  <a href="../index.html" style="color:var(--gold);">nak3deye.com</a>
+  <span style="margin:0 0.5rem;opacity:0.4;">/</span>
+  <span>entertainment</span>
+</div>
+
+<!-- DIVISIONS -->
+<section>
+  <span class="section-eyebrow reveal">Our Divisions</span>
+  <h2 class="section-title reveal reveal-delay-1">What We Do</h2>
+  <p class="section-sub reveal reveal-delay-2">Each division operates as its own entity — focused, specialized, and built to dominate its lane.</p>
+  <div class="divisions-grid">
+    <a href="music/" class="division-card reveal reveal-delay-1">
+      <div class="division-card-bg"></div>
+      <div class="division-card-icon">🎵</div>
+      <div class="division-card-label">Record Label</div>
+      <h3>Music</h3>
+      <p>Franklin Rizzolini. Fourcgawd. Original sound on every platform.</p>
+      <div class="division-link">nak3deye.com/entertainment/music →</div>
+    </a>
+    <a href="film/" class="division-card reveal reveal-delay-2">
+      <div class="division-card-bg"></div>
+      <div class="division-card-icon">🎬</div>
+      <div class="division-card-label">Film & Television</div>
+      <h3>Film</h3>
+      <p>Music videos, original TV series, and cinematic productions.</p>
+      <div class="division-link">nak3deye.com/entertainment/film →</div>
+    </a>
+    <div class="division-card reveal reveal-delay-3" style="opacity:0.6;cursor:default;">
+      <div class="division-card-bg"></div>
+      <div class="division-card-icon">📺</div>
+      <div class="division-card-label">IPTV · Coming Soon</div>
+      <h3>Nak3d Eye TV</h3>
+      <p>Premium streaming platform — original and curated content for the culture.</p>
+      <div class="division-link" style="color:var(--white-muted);">Coming Soon</div>
+    </div>
+    <div class="division-card reveal reveal-delay-4" style="opacity:0.6;cursor:default;">
+      <div class="division-card-bg"></div>
+      <div class="division-card-icon">💻</div>
+      <div class="division-card-label">Digital · Coming Soon</div>
+      <h3>Nak3d Eye Digital</h3>
+      <p>Technology, platforms, and digital infrastructure for the empire.</p>
+      <div class="division-link" style="color:var(--white-muted);">Coming Soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED VIDEO -->
+<section class="video-section" style="background:var(--black-2);">
+  <span class="section-eyebrow reveal">Fan Favorite</span>
+  <h2 class="section-title reveal reveal-delay-1">"Deli" — 411K+ Views</h2>
+  <div class="video-frame reveal reveal-delay-2" style="max-width:900px;margin:0 auto;">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Deli - Franklin Rizzolini" allowfullscreen loading="lazy"></iframe>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-section">
+  <span class="section-eyebrow reveal">Stay Connected</span>
+  <h2 class="section-title reveal reveal-delay-1">Nak3d Eye Updates</h2>
+  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">Music drops, film releases, and entertainment news — straight to your inbox.</p>
+  <form class="email-form reveal reveal-delay-3" onsubmit="return false;">
+    <input type="email" placeholder="Your email address" required />
+    <button type="submit" class="btn-primary">Join The Movement</button>
+  </form>
+  <p class="email-note">No spam. Unsubscribe anytime.</p>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../images/ne-logo.png" alt="Nak3d Eye" />
+      <p>Nak3d Eye Entertainment — a subsidiary of Nak3d Eye Enterprises. Music · Film · TV · Digital.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Divisions</h4>
+      <ul>
+        <li><a href="music/">Music Label</a></li>
+        <li><a href="film/">Film & TV</a></li>
+        <li><a href="#">IPTV (Soon)</a></li>
+        <li><a href="#">Digital (Soon)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Artists</h4>
+      <ul>
+        <li><a href="music/artists/franklin-rizzolini/">Franklin Rizzolini</a></li>
+        <li><a href="music/artists/fourcgawd/">Fourcgawd</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Enterprise</h4>
+      <ul>
+        <li><a href="../index.html">Nak3d Eye Enterprises</a></li>
+        <li><a href="mailto:info@nak3deye.com">Contact</a></li>
+        <li><a href="#">Press</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Nak3d Eye Enterprises. All Rights Reserved.</p>
+    <div class="social-links">
+      <a href="https://instagram.com/rizzolini973" target="_blank" rel="noopener">IG</a>
+      <a href="#" aria-label="Twitter">𝕏</a>
+      <a href="#" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
