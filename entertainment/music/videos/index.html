@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Hub — Nak3d Eye Entertainment</title>
+  <meta name="description" content="The visual library of Nak3d Eye Music. Watch official music videos, behind the scenes, and artist features." />
+  <link rel="icon" href="../../../images/ne-logo.png" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <style>
+    .video-hub-hero {
+      padding: 10rem 4rem 4rem;
+      text-align: center;
+      background: #050505;
+      border-bottom: 1px solid var(--white-faint);
+    }
+    
+    .video-category {
+      margin: 6rem 0;
+      padding: 0 4rem;
+    }
+    
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      border-left: 4px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+    
+    .category-header h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 2.5rem;
+    }
+    
+    .video-card {
+      background: var(--black-2);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--white-faint);
+      transition: var(--transition);
+    }
+    
+    .video-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    
+    .video-info {
+      padding: 1.5rem;
+    }
+    
+    .video-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    
+    .video-info p {
+      font-size: 0.85rem;
+      color: var(--white-muted);
+    }
+    
+    .affiliate-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    
+    @media(max-width:768px) {
+      .video-category { padding: 0 1.5rem; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+<nav id="main-nav">
+  <div class="nav-logo">
+    <img src="../../../images/ne-logo.png" alt="Nak3d Eye" />
+    <span>Nak3d Eye</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../../../index.html">Hub</a></li>
+    <li><a href="../../">Music</a></li>
+    <li><a href="../artists/franklin-rizzolini/">Franklin Rizzolini</a></li>
+    <li><a href="../artists/fourcgawd/">Fourcgawd</a></li>
+  </ul>
+  <a href="../../" class="nav-cta">The Roster</a>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="video-hub-hero">
+  <span class="section-eyebrow reveal">Visual Library</span>
+  <h1 class="section-title reveal reveal-delay-1">Music <span class="gold">Videos</span></h1>
+  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">The official video hub for Nak3d Eye Entertainment — featuring our label artists and the global affiliate network.</p>
+</div>
+
+<!-- OFFICIAL PLAYLIST (THE 30/30 GROUP) -->
+<section class="video-category">
+  <div class="category-header">
+    <div>
+      <span class="section-eyebrow" style="text-align:left;">Complete Collection</span>
+      <h2>The 30/30 Playlist</h2>
+    </div>
+  </div>
+  
+  <div class="video-grid" style="grid-template-columns: 1fr;">
+    <div class="video-card" style="aspect-ratio: auto; padding: 1rem;">
+      <div class="video-container" style="padding-bottom: 45%;">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL2sjZv55vhx9Hr31xWAEedqyz7XedpGXP" title="Nak3d Eye Music - Official Playlist" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Official 30/30 Group Archive</h3>
+        <p>Continuous playback of all music videos, behind-the-scenes, and promotional content from the Nak3d Eye roster.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED LABEL RELEASES -->
+<section class="video-category" style="background: var(--black-matte); padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="category-header">
+    <div>
+      <span class="section-eyebrow" style="text-align:left;">Featured Releases</span>
+      <h2>Label Artists</h2>
+    </div>
+  </div>
+  
+  <div class="video-grid">
+    <!-- Franklin Rizzolini -->
+    <div class="video-card reveal">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/jw-ikydnr74" title="Lonely at the Top - Franklin Rizzolini" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Lonely at the Top</h3>
+        <p>Franklin Rizzolini</p>
+      </div>
+    </div>
+    
+    <!-- Fourcgawd placeholder -->
+    <div class="video-card reveal reveal-delay-1">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PL2sjZv55vhx9Hr31xWAEedqyz7XedpGXP&index=1" title="Fourcgawd Releases" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <h3>Latest Drops</h3>
+        <p>Fourcgawd</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATES -->
+<section class="video-category" style="background: var(--black-matte); padding-top: 4rem; padding-bottom: 4rem;">
+  <div class="category-header">
+    <div>
+      <span class="section-eyebrow" style="text-align:left;">Network & Affiliates</span>
+      <h2>The Global Eye</h2>
+    </div>
+  </div>
+  
+  <div class="video-grid">
+    <!-- Jersey Demic -->
+    <div class="video-card reveal">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/IYMaDMiWdmc" title="Gettin It - Jersey Demic" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <span class="affiliate-badge">Affiliate Artist</span>
+        <h3>Gettin It</h3>
+        <p>Jersey Demic</p>
+      </div>
+    </div>
+    
+    <div class="video-card reveal reveal-delay-1">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/-J7YTJ9EkPY" title="Hate on Me - Jersey Demic" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <span class="affiliate-badge">Affiliate Artist</span>
+        <h3>Hate on Me</h3>
+        <p>Jersey Demic</p>
+      </div>
+    </div>
+
+    <div class="video-card reveal reveal-delay-2">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Salute Jersey - Jersey Demic" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <span class="affiliate-badge">Affiliate Artist</span>
+        <h3>Salute Jersey</h3>
+        <p>Jersey Demic (The Anthem)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="margin-top: 4rem;">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="../../../images/ne-logo.png" alt="Nak3d Eye" />
+      <p>Subscribe to the official YouTube channel for the latest drops.</p>
+    </div>
+    <div class="social-links" style="margin-top: 2rem;">
+      <a href="https://youtube.com/@nak3deye" class="btn-outline">Official YouTube Channel</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../js/main.js"></script>
+</body>
+</html>

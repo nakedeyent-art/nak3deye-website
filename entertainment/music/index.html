@@ -3,316 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nak3d Eye Music — Independent Record Label</title>
-  <meta name="description" content="Nak3d Eye Music — independent record label. Home of Franklin Rizzolini and Fourcgawd. Stream on Apple Music, Spotify, Tidal, Amazon, and SoundCloud." />
+  <title>Music — Nak3d Eye Entertainment</title>
+  <meta name="description" content="Select an artist to explore the sound of Nak3d Eye Music." />
   <link rel="icon" href="../../images/ne-logo.png" />
   <link rel="stylesheet" href="../../css/style.css" />
   <style>
-    .music-page-hero {
-      padding: 9rem 4rem 5rem; text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.08) 0%, var(--black) 70%);
-      border-bottom: 1px solid rgba(212,175,55,0.1);
+    :root {
+      --gold: #d4af37;
+      --white-faint: rgba(255,255,255,0.1);
     }
-    .breadcrumb {
-      padding: 0.9rem 4rem;
-      border-bottom: 1px solid var(--white-faint);
-      font-size: 0.75rem; color: var(--white-muted);
-      display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;
+    
+    body, html {
+      margin: 0; padding: 0; height: 100%; overflow: hidden;
+      background: #000; font-family: 'Outfit', sans-serif;
     }
-    .breadcrumb a { color: var(--gold); transition: var(--transition); }
-    .breadcrumb a:hover { color: var(--gold-light); }
-    .breadcrumb span { opacity: 0.4; }
-    @media(max-width:768px) { .music-page-hero { padding: 7rem 1.5rem 3rem; } .breadcrumb { padding: 0.9rem 1.5rem; } }
+    
+    .roster-container {
+      display: flex; height: 100vh; width: 100vw;
+    }
+    
+    .artist-half {
+      position: relative; flex: 1; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none; cursor: pointer;
+    }
+    
+    .artist-half:hover { flex: 1.2; }
+    
+    .artist-image {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform 0.8s ease, filter 0.5s ease;
+      filter: grayscale(40%) contrast(1.1);
+    }
+    
+    .artist-half:hover .artist-image {
+      transform: scale(1.05); filter: grayscale(0%) contrast(1.2);
+    }
+    
+    .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.6) 100%);
+      transition: background 0.5s ease;
+    }
+    
+    .artist-half:hover .overlay {
+      background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 50%, rgba(0,0,0,0.4) 100%);
+    }
+    
+    .artist-content {
+      position: relative; z-index: 2; text-align: center; color: #fff;
+      pointer-events: none;
+    }
+    
+    .artist-content h2 {
+      font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900;
+      text-transform: uppercase; letter-spacing: -2px; margin: 0;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    
+    .artist-content span {
+      display: block; font-size: 0.8rem; letter-spacing: 0.5em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+    }
+    
+    .view-label {
+      margin-top: 2rem; font-weight: 700; text-transform: uppercase;
+      font-size: 0.7rem; letter-spacing: 0.2em; border: 1px solid var(--gold);
+      padding: 0.8rem 2rem; display: inline-block; opacity: 0;
+      transform: translateY(20px); transition: all 0.4s ease;
+    }
+    
+    .artist-half:hover .view-label { opacity: 1; transform: translateY(0); }
+    
+    .back-hub {
+      position: fixed; top: 30px; left: 30px; z-index: 10;
+      color: #fff; text-decoration: none; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700;
+      background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 40px;
+      backdrop-filter: blur(10px); border: 1px solid var(--white-faint);
+    }
+    
+    .back-hub:hover { color: var(--gold); border-color: var(--gold); }
+
+    @media(max-width: 768px) {
+      .roster-container { flex-direction: column; }
+      .artist-half:hover { flex: 1; }
+    }
   </style>
 </head>
 <body>
 
-<nav id="main-nav">
-  <div class="nav-logo">
-    <img src="../../images/ne-logo.png" alt="Nak3d Eye" />
-    <span>Nak3d Eye</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="../../index.html">Enterprises</a></li>
-    <li><a href="../index.html">Entertainment</a></li>
-    <li><a href="index.html" class="active">Music</a></li>
-    <li><a href="artists/franklin-rizzolini/">Franklin</a></li>
-    <li><a href="artists/fourcgawd/">Fourcgawd</a></li>
-  </ul>
-  <a href="#stream" class="nav-cta">Stream Now</a>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
-</nav>
+<a href="../index.html" class="back-hub">← Entertainment Hub</a>
 
-<div class="breadcrumb">
-  <a href="../../index.html">nak3deye.com</a>
-  <span>/</span>
-  <a href="../index.html">entertainment</a>
-  <span>/</span>
-  <span style="color:var(--white);">music</span>
+<div class="roster-container">
+  <!-- Franklin Rizzolini -->
+  <a href="artists/franklin-rizzolini/" class="artist-half">
+    <div class="artist-image" style="background-image: url('../../images/franklin-rizzolini.png');"></div>
+    <div class="overlay"></div>
+    <div class="artist-content">
+      <span>Founder / Artist</span>
+      <h2>Rizzolini</h2>
+      <div class="view-label">View Profile</div>
+    </div>
+  </a>
+
+  <!-- FourcGawd -->
+  <a href="artists/fourcgawd/" class="artist-half">
+    <div class="artist-image" style="background-image: url('../../images/fourcgawd.png');"></div>
+    <div class="overlay"></div>
+    <div class="artist-content">
+      <span>The Future</span>
+      <h2>FourcGawd</h2>
+      <div class="view-label">View Profile</div>
+    </div>
+  </a>
 </div>
 
-<!-- HERO -->
-<div class="music-page-hero">
-  <span class="section-eyebrow reveal">Nak3d Eye Entertainment</span>
-  <h1 class="section-title reveal reveal-delay-1" style="font-size:clamp(2.5rem,7vw,6rem);">Nak3d Eye <span class="gold">Music</span></h1>
-  <p style="color:var(--white-muted);max-width:500px;margin:0 auto 2.5rem;font-size:1.05rem;" class="reveal reveal-delay-2">Independent record label. Authentic sound. Available everywhere you listen.</p>
-  <div id="stream" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;" class="reveal reveal-delay-3">
-    <a href="#" class="stream-btn">🎵 Apple Music</a>
-    <a href="#" class="stream-btn">🎧 Spotify</a>
-    <a href="#" class="stream-btn">🌊 Tidal</a>
-    <a href="#" class="stream-btn">📦 Amazon Music</a>
-    <a href="#" class="stream-btn">☁️ SoundCloud</a>
-  </div>
-</div>
-
-<!-- FEATURED VIDEO -->
-<section class="video-section">
-  <span class="section-eyebrow reveal">Most Viewed</span>
-  <h2 class="section-title reveal reveal-delay-1">"Deli" — 411K+ Views</h2>
-  <div class="video-stats reveal reveal-delay-2">
-    <div class="video-stat"><span>411K+</span><small>Views</small></div>
-    <div class="video-stat"><span>#1</span><small>Most Watched</small></div>
-    <div class="video-stat"><span>2024</span><small>Released</small></div>
-  </div>
-  <div class="video-frame reveal reveal-delay-3">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Deli - Franklin Rizzolini ft. Jersey Demic" allowfullscreen loading="lazy"></iframe>
-  </div>
-</section>
-
-<!-- ARTISTS -->
-<section style="background:var(--black-2);">
-  <span class="section-eyebrow reveal">The Roster</span>
-  <h2 class="section-title reveal reveal-delay-1">Our Artists</h2>
-  <p class="section-sub reveal reveal-delay-2">Two voices. One uncompromising label.</p>
-  <div class="artists-grid">
-    <a href="artists/franklin-rizzolini/" class="artist-card reveal reveal-delay-2">
-      <img src="../../images/franklin-rizzolini.png" alt="Franklin Rizzolini" />
-      <div class="artist-card-overlay">
-        <div class="artist-card-tag">Founder · Hip-Hop · R&B</div>
-        <h3>Franklin Rizzolini</h3>
-        <p>Multi-genre artist, label founder, and creative architect of the Nak3d Eye sound.</p>
-        <div class="artist-card-btn">
-          <span>nak3deye.com/entertainment/music/artists/franklin-rizzolini</span>
-        </div>
-      </div>
-    </a>
-    <a href="artists/fourcgawd/" class="artist-card reveal reveal-delay-3">
-      <img src="../../images/fourcgawd-real.jpg" alt="Fourcgawd" style="object-position:top center;" />
-      <div class="artist-card-overlay">
-        <div class="artist-card-tag">Hip-Hop · Trap · Street</div>
-        <h3>Fourcgawd</h3>
-        <p>Raw energy meets calculated flow. New Jersey's next chapter.</p>
-        <div class="artist-card-btn">
-          <span>nak3deye.com/entertainment/music/artists/fourcgawd</span>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- CATALOG -->
-<section>
-  <span class="section-eyebrow reveal">Discography</span>
-  <h2 class="section-title reveal reveal-delay-1">The Full Catalog</h2>
-  <p class="section-sub reveal reveal-delay-2">Every project from the Nak3d Eye Music family.</p>
-  <div class="music-filters reveal reveal-delay-3">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="album">Albums</button>
-    <button class="filter-btn" data-filter="single">Singles</button>
-    <button class="filter-btn" data-filter="collab">Collabs</button>
-  </div>
-  <div class="music-grid">
-    <div class="music-card reveal reveal-delay-1" data-type="album">
-      <div class="music-card-cover">
-        <img src="../../images/toxic-traits.png" alt="Toxic Traits" />
-        <div class="music-card-play"><div class="play-icon">▶</div></div>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Album · 2025 · R&B/Soul</div>
-        <div class="music-card-title">Rizzolini Presents: Toxic Traits</div>
-        <div class="music-card-artist">Franklin Rizzolini</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">Apple Music</a>
-          <a href="#" class="stream-pill">Spotify</a>
-          <a href="#" class="stream-pill">Tidal</a>
-        </div>
-      </div>
-    </div>
-    <div class="music-card reveal reveal-delay-2" data-type="album">
-      <div class="music-card-cover">
-        <img src="../../images/many-mo-miles.png" alt="Many Mo Miles" />
-        <div class="music-card-play"><div class="play-icon">▶</div></div>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Album Series · 2025</div>
-        <div class="music-card-title">Many Mo' Miles 1 & 2</div>
-        <div class="music-card-artist">Franklin Rizzolini</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">Apple Music</a>
-          <a href="#" class="stream-pill">Spotify</a>
-          <a href="#" class="stream-pill">Amazon</a>
-        </div>
-      </div>
-    </div>
-    <div class="music-card reveal reveal-delay-3" data-type="album">
-      <div class="music-card-cover">
-        <img src="../../images/flood-the-gates.png" alt="Flood The Gates" />
-        <div class="music-card-play"><div class="play-icon">▶</div></div>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Series · Vol. 1–3 · Hip-Hop</div>
-        <div class="music-card-title">Flood The Gates</div>
-        <div class="music-card-artist">Nak3d Eye</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">SoundCloud</a>
-          <a href="#" class="stream-pill">Spotify</a>
-        </div>
-      </div>
-    </div>
-    <div class="music-card reveal reveal-delay-1" data-type="collab">
-      <div class="music-card-cover" style="background:linear-gradient(135deg,#0d0a1a,#1a0d1a);display:flex;align-items:center;justify-content:center;aspect-ratio:1;">
-        <span style="font-size:4rem;">🎤</span>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Collaboration Series</div>
-        <div class="music-card-title">30/30 Series Vol. 1–4</div>
-        <div class="music-card-artist">Franklin Rizzolini ft. Jersey Demic</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">SoundCloud</a>
-          <a href="#" class="stream-pill">Spotify</a>
-        </div>
-      </div>
-    </div>
-    <div class="music-card reveal reveal-delay-2" data-type="single">
-      <div class="music-card-cover" style="background:linear-gradient(135deg,#1a0808,#0d0d0d);display:flex;align-items:center;justify-content:center;aspect-ratio:1;">
-        <span style="font-size:4rem;">⚡</span>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Singles</div>
-        <div class="music-card-title">Sins Of The Father</div>
-        <div class="music-card-artist">Franklin Rizzolini</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">Apple Music</a>
-          <a href="#" class="stream-pill">Spotify</a>
-        </div>
-      </div>
-    </div>
-    <div class="music-card reveal reveal-delay-3" data-type="single">
-      <div class="music-card-cover" style="background:linear-gradient(135deg,#080a1a,#0d0d0d);display:flex;align-items:center;justify-content:center;aspect-ratio:1;">
-        <span style="font-size:4rem;">🏀</span>
-      </div>
-      <div class="music-card-info">
-        <div class="music-card-type">Singles</div>
-        <div class="music-card-title">Swish / Deal Wit Us</div>
-        <div class="music-card-artist">Franklin Rizzolini</div>
-        <div class="music-card-links">
-          <a href="#" class="stream-pill">Apple Music</a>
-          <a href="#" class="stream-pill">Tidal</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEOS -->
-<section id="videos" style="background:var(--black-2);">
-  <span class="section-eyebrow reveal">Visual Library</span>
-  <h2 class="section-title reveal reveal-delay-1">Music Videos</h2>
-  <h3 style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-muted);margin-bottom:1.5rem;" class="reveal">Published</h3>
-  <div class="video-wall" style="margin-bottom:4rem;">
-    <div style="border-radius:12px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(212,175,55,0.2);" class="reveal reveal-delay-1">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Deli" allowfullscreen loading="lazy" style="width:100%;height:100%;border:none;"></iframe>
-    </div>
-    <div style="border-radius:12px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(212,175,55,0.2);" class="reveal reveal-delay-2">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Lonely At The Top" allowfullscreen loading="lazy" style="width:100%;height:100%;border:none;"></iframe>
-    </div>
-    <div style="border-radius:12px;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(212,175,55,0.2);" class="reveal reveal-delay-3">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Backpack" allowfullscreen loading="lazy" style="width:100%;height:100%;border:none;"></iframe>
-    </div>
-  </div>
-  <h3 style="font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-muted);margin-bottom:1.5rem;" class="reveal">Coming Soon — Exclusive</h3>
-  <div class="video-wall">
-    <div class="video-card reveal reveal-delay-1">
-      <img src="../../images/franklin-rizzolini.png" class="video-card-thumb" alt="New Level" />
-      <div class="video-card-overlay">
-        <div class="coming-soon-badge">Dropping Soon</div>
-        <div class="video-card-title">New Level</div>
-        <div class="video-card-artist">Franklin Rizzolini</div>
-      </div>
-    </div>
-    <div class="video-card reveal reveal-delay-2">
-      <img src="../../images/fourcgawd-real.jpg" class="video-card-thumb" alt="Fourcgawd" style="object-position:top;" />
-      <div class="video-card-overlay">
-        <div class="coming-soon-badge">Dropping Soon</div>
-        <div class="video-card-title">Untitled</div>
-        <div class="video-card-artist">Fourcgawd</div>
-      </div>
-    </div>
-    <div class="video-card reveal reveal-delay-3">
-      <img src="../../images/toxic-traits.png" class="video-card-thumb" alt="Save Her" />
-      <div class="video-card-overlay">
-        <div class="coming-soon-badge">Dropping Soon</div>
-        <div class="video-card-title">Save Her</div>
-        <div class="video-card-artist">Franklin Rizzolini</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMAIL -->
-<section class="email-section">
-  <span class="section-eyebrow reveal">Don't Miss A Drop</span>
-  <h2 class="section-title reveal reveal-delay-1">New Music Alerts</h2>
-  <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">Get first access to new releases, videos, and exclusives.</p>
-  <form class="email-form reveal reveal-delay-3" onsubmit="return false;">
-    <input type="email" placeholder="Your email address" required />
-    <button type="submit" class="btn-primary">Notify Me</button>
-  </form>
-  <p class="email-note">No spam. Unsubscribe anytime.</p>
-</section>
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <img src="../../images/ne-logo.png" alt="Nak3d Eye" />
-      <p>Nak3d Eye Music — independent record label and A&R. A subsidiary of Nak3d Eye Entertainment.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Artists</h4>
-      <ul>
-        <li><a href="artists/franklin-rizzolini/">Franklin Rizzolini</a></li>
-        <li><a href="artists/fourcgawd/">Fourcgawd</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Stream</h4>
-      <ul>
-        <li><a href="#">Apple Music</a></li>
-        <li><a href="#">Spotify</a></li>
-        <li><a href="#">Tidal</a></li>
-        <li><a href="#">Amazon Music</a></li>
-        <li><a href="#">SoundCloud</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="../../index.html">Nak3d Eye Enterprises</a></li>
-        <li><a href="../index.html">Entertainment</a></li>
-        <li><a href="../film/">Film & TV</a></li>
-        <li><a href="mailto:info@nak3deye.com">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Nak3d Eye Enterprises. All Rights Reserved.</p>
-    <div class="social-links">
-      <a href="https://instagram.com/rizzolini973" target="_blank" rel="noopener">IG</a>
-      <a href="https://instagram.com/toxictraitmusic" target="_blank" rel="noopener">🎵</a>
-      <a href="#" aria-label="YouTube">YT</a>
-    </div>
-  </div>
-</footer>
 <script src="../../js/main.js"></script>
 </body>
 </html>
