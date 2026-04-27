@@ -3,28 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nak3d Eye Enterprises | Parent Company</title>
+    <title>Nak3d Eye Enterprises | The Sovereign Empire</title>
+    <meta name="description" content="Official portal for Nak3d Eye Enterprises. Managing global interests in Entertainment, Finance, Logistics, and Technology.">
+    <link rel="icon" href="images/ne-logo.png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --red-glow: rgba(255, 0, 0, 0.2);
+            --gold: #d4af37;
+        }
+
+        body {
+            background: #000;
+            overflow-x: hidden;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .background-watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vw;
+            background: url('images/enterprises-logo.png') center/contain no-repeat;
+            opacity: 0.15;
+            filter: grayscale(0%) contrast(1.2);
+            z-index: -1;
+            pointer-events: none;
+            animation: pulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        .landing-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .main-emblem {
+            width: 180px;
+            height: 180px;
+            background: url('images/enterprises-logo.png') center/contain no-repeat;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 30px rgba(255,0,0,0.4));
+        }
+
+        .main-logo-text {
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-transform: uppercase;
+            letter-spacing: 0.8rem;
+            font-weight: 900;
+            margin: 0;
+            background: linear-gradient(180deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subsidiary-nav {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .sub-card {
+            background: rgba(10,10,10,0.6);
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem 1.5rem;
+            text-decoration: none;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.2, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .sub-card:hover {
+            background: rgba(20,20,20,0.8);
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .sub-card h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .sub-card p {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            opacity: 0.7;
+        }
+
+        @media(max-width: 1024px) {
+            .subsidiary-nav { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media(max-width: 640px) {
+            .subsidiary-nav { grid-template-columns: 1fr; }
+            .background-watermark { width: 120vw; height: 120vw; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <ul class="nav-menu">
-            <li><a href="entertainment/">Entertainment</a></li>
-            <li><a href="pest-arrest/">Pest Arrest</a></li>
-            <li><a href="nak3deyety/">Nak3deyeTv</a></li>
-            <li><a href="financing-faith/">Financing Faith</a></li>
-            <li><a href="socialcard/">SocialCard</a></li>
-            <li><a href="thaafterparty/">ThaAfterParty</a></li>
-            <li><a href="transport-central/">Transport</a></li>
-            <li><a href="mirror-app/">Mirror App</a></li>
-        </ul>
-    </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="main-emblem"></div>
-            <h1 class="main-logo-text">Nak3d Eye Enterprises</h1>
-        </section>
+    <div class="background-watermark"></div>
+
+    <main class="landing-hero">
+        <div class="main-emblem"></div>
+        <h1 class="main-logo-text">Nak3d Eye Enterprises</h1>
+        <p style="font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--text-secondary); margin-top: 1rem;">The Sovereign Empire</p>
+
+        <div class="subsidiary-nav">
+            <a href="entertainment/" class="sub-card">
+                <h3>Entertainment</h3>
+                <p>Music, Film & TV</p>
+            </a>
+            <a href="financing-faith/" class="sub-card">
+                <h3>Financing Faith</h3>
+                <p>Asset Management</p>
+            </a>
+            <a href="transport-central/" class="sub-card">
+                <h3>Transport Central</h3>
+                <p>Logistics & Fleet</p>
+            </a>
+            <a href="nak3deyety/" class="sub-card">
+                <h3>Nak3deyeTv</h3>
+                <p>Digital Broadcasting</p>
+            </a>
+            <a href="pest-arrest/" class="sub-card">
+                <h3>Pest Arrest</h3>
+                <p>Specialized Services</p>
+            </a>
+            <a href="socialcard/" class="sub-card">
+                <h3>SocialCard</h3>
+                <p>Digital Identity</p>
+            </a>
+            <a href="thaafterparty/" class="sub-card">
+                <h3>ThaAfterParty</h3>
+                <p>Event Production</p>
+            </a>
+            <a href="mirror-app/" class="sub-card">
+                <h3>Mirror App</h3>
+                <p>Consumer Tech</p>
+            </a>
+        </div>
     </main>
+
+    <footer style="position: absolute; bottom: 40px; width: 100%; text-align: center;">
+        <p style="font-size: 0.6rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.2em;">© 2025 Nak3d Eye Enterprises. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
