@@ -1,101 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Franklin Rizzolini | Official Discography | Nak3d Eye Music</title>
-    <link rel="stylesheet" href="../../../../css/style.css">
-    <style>
-        .discography-grid a { text-decoration: none; color: inherit; }
-        .album-card:hover { transform: scale(1.05); transition: 0.3s; }
-        .stream-tag { font-size: 0.6rem; color: var(--accent); border: 1px solid var(--accent); padding: 2px 5px; border-radius: 3px; display: inline-block; margin-top: 10px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franklin Rizzolini — Nak3d Eye Music</title>
+  <link rel="icon" href="../../../images/ne-logo.png" />
+  <link rel="stylesheet" href="../../../css/style.css" />
+  <style>
+    .artist-hero {
+      height: 80vh;
+      background: linear-gradient(0deg, #000 0%, transparent 100%), url('../../../images/franklin-rizzolini.png');
+      background-size: cover;
+      background-position: center 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 10% 100px;
+    }
+
+    .artist-hero h1 {
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -4px;
+      margin: 0;
+      line-height: 0.9;
+    }
+
+    .artist-hero span {
+      font-size: 0.8rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .artist-nav {
+      position: sticky;
+      top: 80px;
+      background: rgba(2,2,2,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 20px 10%;
+      z-index: 100;
+      display: flex;
+      gap: 30px;
+    }
+
+    .artist-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      transition: color 0.3s;
+    }
+
+    .artist-nav a:hover { color: #fff; }
+
+    .content-section {
+      padding: 100px 10%;
+    }
+
+    .discography-scroller {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto;
+      padding: 20px 0 40px;
+      scrollbar-width: none;
+    }
+
+    .discography-scroller::-webkit-scrollbar { display: none; }
+
+    .release-card {
+      min-width: 300px;
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      padding: 20px;
+      transition: all 0.3s;
+    }
+
+    .release-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+    .release-art {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #111;
+      margin-bottom: 20px;
+      background-size: cover;
+    }
+
+    .release-card h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .release-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .release-links a {
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid rgba(212,175,55,0.3);
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+
+    .release-links a:hover { background: var(--accent); color: #000; }
+
+    .bio-text {
+      max-width: 800px;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <ul class="nav-menu">
-            <li><a href="../../../../">Home</a></li>
-            <li><a href="../../">Music Hub</a></li>
-            <li><a href="../../videos/">Videos</a></li>
-        </ul>
-    </header>
 
-    <main class="artist-page">
-        <section class="artist-header">
-            <div class="artist-main-photo" style="background-image: url('../../../../assets/rizzolini_red.jpg');"></div>
-            <div class="artist-info">
-                <h1>Franklin Rizzolini</h1>
-                <p>Founder of Nak3d Eye Enterprises. Multi-genre architect. A voice defined by grit, vision, and the pursuit of sovereignty.</p>
-                <div class="social-links" style="margin-top: 20px; display: flex; gap: 20px;">
-                    <a href="https://twitter.com/rizzolini973" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1rem;">TWITTER</a>
-                    <a href="https://instagram.com/rizzolini973" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1rem;">INSTAGRAM</a>
-                    <a href="https://soundcloud.com/973st" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1rem;">SOUNDCLOUD</a>
-                </div>
-            </div>
-        </section>
+<header>
+  <nav class="nav-menu">
+    <ul class="nav-menu" style="gap: 40px; list-style: none;">
+      <li><a href="../../../index.html">Enterprises</a></li>
+      <li><a href="../../index.html">Entertainment</a></li>
+      <li><a href="../index.html">Artists</a></li>
+      <li><a href="../../videos/">Videos</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <section class="discography-section">
-            <h2>Solo Albums & Series</h2>
-            <div class="discography-grid">
-                <!-- Toxic Traits -->
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_naYgv2H63dhdmw4f585E3sHCLg4HNkBiM" target="_blank" class="album-card">
-                    <div class="album-art" style="background-image: url('../../../../assets/toxic_traits.jpg'); background-size: cover;"></div>
-                    <h3>Toxic Traits Vol. 1</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_m35McrOf2mwkAKnO9bW2COifbMXu8Bjs4" target="_blank" class="album-card">
-                    <div class="album-art" style="background-image: url('../../../../assets/toxic_traits.jpg'); background-size: cover; filter: grayscale(100%);"></div>
-                    <h3>Toxic Traits Vol. 2 (The B-Side)</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <!-- Many Mo Miles -->
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_ljwvgkoNH1sUpJoj11_QKTxp69Xy8CwZk" target="_blank" class="album-card">
-                    <div class="album-art" style="background-image: url('../../../../assets/many_mo_miles.jpg'); background-size: cover;"></div>
-                    <h3>Many Mo' Miles Vol. 1</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_n68u7EZa6rLYCE8MavcyD6iGrhiXYCscs" target="_blank" class="album-card">
-                    <div class="album-art" style="background-image: url('../../../../assets/many_mo_miles.jpg'); background-size: cover;"></div>
-                    <h3>Many Mo' Miles Vol. 2</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <!-- Summertime Talk -->
-                <a href="https://www.youtube.com/playlist?list=PL2sjZv55vhx-g6HE-ZsJZhJVDtcfdhM0r" target="_blank" class="album-card">
-                    <div class="album-art"></div>
-                    <h3>Summertime Talk Vol. 1</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <!-- Other Releases -->
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_mB5fAvfs1wWXLIVQA_geSfB2FYcMERru8" target="_blank" class="album-card">
-                    <div class="album-art"></div>
-                    <h3>More Followers</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_nYWIUYwTfYPoByyB3iLf7MjAaq1s-EnD8" target="_blank" class="album-card">
-                    <div class="album-art"></div>
-                    <h3>Love on the Brain (Attention)</h3>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-            </div>
+<div class="artist-hero">
+  <span>Nak3d Eye Music Group</span>
+  <h1>Rizzolini</h1>
+</div>
 
-            <h2 style="margin-top: 60px;">Collaborations & Groups</h2>
-            <div class="discography-grid">
-                <!-- Flood The Gates -->
-                <a href="https://www.youtube.com/playlist?list=OLAK5uy_n9roKW2Ws5qxALygQoe9KZaZcjHFp6vrg" target="_blank" class="album-card">
-                    <div class="album-art" style="background-image: url('../../../../assets/flood_the_gates.jpg'); background-size: cover;"></div>
-                    <h3>Flood The Gates Vol. 1-3</h3>
-                    <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 5px;">with Jersey Demic</p>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-                <!-- 30/30 Group -->
-                <a href="https://www.youtube.com/playlist?list=PL2sjZv55vhx9Hr31xWAEedqyz7XedpGXP" target="_blank" class="album-card">
-                    <div class="album-art"></div>
-                    <h3>30/30 Group Vol. 1-4</h3>
-                    <p style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 5px;">Rizzolini x Demic</p>
-                    <span class="stream-tag">STREAM ON YOUTUBE MUSIC</span>
-                </a>
-            </div>
-        </section>
-    </main>
+<div class="artist-nav">
+  <a href="#music">Music</a>
+  <a href="#videos">Videos</a>
+  <a href="#bio">Bio</a>
+</div>
+
+<section id="music" class="content-section">
+  <span class="section-eyebrow">The Catalog</span>
+  <h2 class="section-title">Essential <span class="gold">Discography</span></h2>
+  
+  <div class="discography-scroller">
+    <div class="release-card">
+      <div class="release-art" style="background-image: url('../../../images/franklin_authentic/empire_master.png');"></div>
+      <h3>Empire Master</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary);">Single · 2025</p>
+      <div class="release-links">
+        <a href="#">Spotify</a>
+        <a href="#">Apple</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="release-card">
+      <div class="release-art" style="background-color: #111;"></div>
+      <h3>Deli</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary);">Single · 2024</p>
+      <div class="release-links">
+        <a href="#">Spotify</a>
+        <a href="#">Apple</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+    <div class="release-card">
+      <div class="release-art" style="background-color: #111;"></div>
+      <h3>973 Soul</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary);">EP · 2024</p>
+      <div class="release-links">
+        <a href="#">Spotify</a>
+        <a href="#">Apple</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="content-section" style="background: #050505;">
+  <span class="section-eyebrow">Cinematic</span>
+  <h2 class="section-title">Latest <span class="gold">Visuals</span></h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-top: 40px;">
+    <div style="aspect-ratio: 16/9; background: #000; border: 1px solid var(--glass-border);">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
+    </div>
+    <div style="aspect-ratio: 16/9; background: #000; border: 1px solid var(--glass-border);">
+      <iframe src="https://www.youtube.com/embed/5D_34_fXFxc" style="width:100%; height:100%; border:none;" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="bio" class="content-section">
+  <span class="section-eyebrow">The Story</span>
+  <h2 class="section-title">About <span class="gold">Franklin</span></h2>
+  <div class="bio-text">
+    <p>Franklin Rizzolini is more than an artist; he is a visionary architect of the 973 sound and the founder of Nak3d Eye Enterprises. Born from the grit of New Jersey, his music reflects the raw reality of the streets while maintaining a sophisticated corporate edge.</p>
+    <br>
+    <p>With a discography that spans from underground anthems to chart-topping visual experiences, Rizzolini continues to redefine what it means to be an independent power player in the modern entertainment landscape.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="text-align: center; padding: 40px 0; border-top: 1px solid var(--glass-border); margin-top: 100px;">
+    <p style="font-size: 0.7rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">© 2025 Nak3d Eye Enterprises. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="../../../js/main.js"></script>
 </body>
 </html>
