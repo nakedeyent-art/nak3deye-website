@@ -16,9 +16,11 @@ const hamburger = document.querySelector('.nav-hamburger');
 const navLinks = document.querySelector('.nav-links');
 const navCta = document.querySelector('.nav-cta');
 hamburger?.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
   navLinks?.classList.toggle('open');
   navCta?.classList.toggle('open');
 });
+
 
 // ── EMAIL FORM ──
 document.querySelectorAll('.email-form').forEach(form => {
